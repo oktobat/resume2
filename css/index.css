@@ -158,14 +158,14 @@ section {
 #sect3 .category { font-size:20px; color:#000; margin-bottom:20px }
 #sect3 .category a { background-color:#f00; padding:7px 20px; display:inline-block;  border-radius:5px; margin-right:10px }
 #sect3 ul { overflow:hidden;  }
-#sect3 ul li { float:left; width:23.5%; margin:10px 0;  
+#sect3 ul li { float:left; width:23%; margin:20px 0; 
     margin-right:2%; 
-    transform:scale(0.5);
-    opacity:0;
+    /* transform:scale(0.5);
+    opacity:1;
     transition:all 0.5s;
-    transition-delay:0s;
+    transition-delay:0s;  */
 }
-#sect3.on ul li {
+/* #sect3.on ul li {
     transform:scale(1);
     opacity:1;
 }
@@ -176,7 +176,7 @@ section {
 #sect3.on ul li:nth-child(5) { transition-delay:0.8s }
 #sect3.on ul li:nth-child(6) { transition-delay:1.0s }
 #sect3.on ul li:nth-child(7) { transition-delay:1.2s }
-#sect3.on ul li:nth-child(8) { transition-delay:1.4s }
+#sect3.on ul li:nth-child(8) { transition-delay:1.4s } */
 
 #sect3 ul li:nth-child(4n) { margin-right:0 }
 

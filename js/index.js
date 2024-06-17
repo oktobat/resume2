@@ -205,3 +205,60 @@ $('.slideOuter .plpa').on('click', function(){
 })
 
 
+$('#sect3 .category a').on('click', function(e){
+    e.preventDefault()
+    let filterValue = $(this).attr('href')
+    $('#sect3 .grid').isotope({
+        filter:filterValue,
+        layoutMode:'masonry',   // fitRows, masonry
+        itemSelector:'.item'
+    })
+})
+
+$('#sect3 .grid li a').on('click', function(){
+    var href = $(this).attr('href')
+    var title = $(this).attr('title')
+    var src = $(this).find('img').attr('src')
+    var alt = $(this).find('img').attr('alt')
+
+    $('body').append(`<div class="outLayer"><div class="inLayer"><h2>${title}</h2><div><img src="${src}" alt="${alt}"><a href="${href}" target="_blank">사이트이동</a></div></div><button type="button">닫기</button></div>`)
+    $('.outLayer').css({
+        position:'fixed',
+        top:0, left:0, right:0, bottom:0,
+        background:'rgba(0,0,0,0.5)',
+        zIndex:9999999999,
+        display:'flex',
+        alignItems:'center',
+        justifyContent:'center'
+    })
+    $('.inLayer').css({
+        maxWidth:'600px',
+        fontSize:'30px',
+        textAlign:'center',
+        color:'#fff'
+    })
+    $('.inLayer a').css({
+        border:'2px solid #f00',
+        display:'block',
+        padding:'10px 20px',
+        background:'blue',
+        width:'200px',
+        fontSize:'20px',
+        margin:'10px auto'
+    })
+    $('.outLayer button').css({
+        position:'absolute',
+        top:'10px', right:'10px',
+        fontSize:'30px',
+        color:'#fff'
+    })
+    return false
+})
+
+$(document).on('click', '.outLayer button, .outLayer', function(){
+    $('.outLayer').remove()
+})
+
+$(document).on('click', '.inLayer', function(e){
+    e.stopPropagation()
+})
